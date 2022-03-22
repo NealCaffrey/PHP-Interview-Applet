@@ -1,0 +1,27 @@
+<!--pages/question/index.wxml-->
+<view class="container">
+  <text>面向对象右那些特征</text>
+  <view>
+    <text></text>
+
+    <view class="top">
+      <text>基础</text>
+      <text>写笔记</text>
+    </view>
+
+    <view class="line"></view>
+    <view class="content">
+        fdsfdsfd
+    </view>
+    <view class="line"></view>
+
+    <view class="comment">
+      <text>我要反馈</text>
+      <text>视频讲解</text>
+    </view>
+
+    <view class="share">
+
+    </view>
+  </view>
+</view>

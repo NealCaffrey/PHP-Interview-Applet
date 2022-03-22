@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="top">
+    <view>
+      <image src="/images/points.png" mode="scaleToFill" class="points-img"></image>
+      <text class="points-title">30</text>
+    </view>
+    <view>
+      <text class="exam-title">题库量：</text>
+      <text class="exam-number">{{total}}</text>
+    </view>
+    <view>
+      <navigator url="/pages/collection/index" class="collection">收藏榜单</navigator>
+    </view>
+  </view>
+
+  <view class="search">
+    <input class="keyword" placeholder="搜索面试题" name="keyword" placeholder-class="keyword-tips" />
+  </view>
+
+  <view class="type-list" wx:for="{{list}}" wx:key="key" wx:for-item="item">
+      <view class="list-info" bindtap="showItem" data-id="{{item.id}}">
+        <view class="list-left">
+          <image src="/images/{{item.category_name}}.png" class="type-icon"></image>
+          <text class="type-title">{{item.category_name}}</text>
+        </view>
+        <view class="list-right">
+          <text class="list-number">{{item.know_num}}</text>
+          <image src="/images/open.png" class="operate"></image>
+        </view>
+      </view>
+
+      <view class="list-questioin {{item.show ? 'show' : 'hide'}}">
+        <view class="knowledge-info" wx:for="{{knowledge}}" wx:key="que" wx:for-item="knowledgeList" wx:for-index="knowledgeIdex">
+            <navigator url="/pages/knowledge/index?id={{knowledgeList.id}}" open-type="navigate">
+              <view class="knowledge-info-box">
+                <text class="knowledge-number">{{knowledgeIdex+1}}.</text>
+                <text class="knowledge-title">{{knowledgeList.question}}</text>
+                <image class="knowledge-image" src="/images/right.png"></image>
+              </view>
+          </navigator>
+        </view>
+      </view>
+  </view>
+
+</view>

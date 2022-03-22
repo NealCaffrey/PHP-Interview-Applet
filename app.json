@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/exam/index",
+    "pages/user/index",
+    "pages/collection/index",
+    "pages/knowledge/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "PHP面试库",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color":"#a9b7b7",
+    "selectedColor":"#11cd6e",
+    "borderStyle": "black",
+    "backgroundColor":"#ffffff",
+    "list":[
+      {
+      "pagePath": "pages/index/index",
+      "text":"题库",
+      "iconPath": "images/know.png",
+      "selectedIconPath": "images/know_selected.png"
+    },
+    {
+      "pagePath": "pages/exam/index",
+      "text":"刷题",
+      "iconPath": "images/exam.png",
+      "selectedIconPath": "images/exam_selected.png"
+    },
+    {
+      "pagePath": "pages/user/index",
+      "text":"我的",
+      "iconPath": "images/me.png",
+      "selectedIconPath": "images/me_selected.png"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
