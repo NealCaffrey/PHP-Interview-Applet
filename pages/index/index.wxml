@@ -7,7 +7,7 @@
       <text class="points-title">30</text>
     </view>
     <view>
-      <text class="exam-title">题库量：</text>
+      <text class="exam-title">题库量:</text>
       <text class="exam-number">{{total}}</text>
     </view>
     <view>

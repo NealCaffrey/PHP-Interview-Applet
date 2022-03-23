@@ -16,11 +16,12 @@ Page({
         'content-type':'application/json'
       },
       success: res => {
-        console.log(res.data)
-        this.setData({
-          total:res.data.total,
-          list:res.data.list
-        })
+        if (res.data.status) {
+          this.setData({
+            total:res.data.total,
+            list:res.data.list
+          })
+        }
       }
     })
   },
@@ -39,16 +40,18 @@ Page({
     }
     this.setData({
       list:data
-    })
+    });
     wx.request({
       url: 'https://liuchuanqi.com/api/index/knowledge/'+categoryId,
       header:{
         'content-type':'application/json'
       },
       success: res => {
-        this.setData({
-          knowledge:res.data.list
-        })
+        if (res.data.status) {
+          this.setData({
+            knowledge:res.data.list
+          })
+        }
       }
     })
   }
