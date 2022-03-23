@@ -11,7 +11,7 @@ Page({
   // 事件处理函数
   onLoad() {
     wx.request({
-      url: 'https://liuchuanqi.com/api/interview/category',
+      url: 'https://liuchuanqi.com/api/index/category',
       header:{
         'content-type':'application/json'
       },
@@ -41,7 +41,7 @@ Page({
       list:data
     })
     wx.request({
-      url: 'https://liuchuanqi.com/api/interview/knowledge?category_id='+categoryId,
+      url: 'https://liuchuanqi.com/api/index/knowledge/'+categoryId,
       header:{
         'content-type':'application/json'
       },

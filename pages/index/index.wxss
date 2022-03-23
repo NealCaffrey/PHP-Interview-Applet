@@ -79,12 +79,12 @@
 }
 .list-number {
   margin-right: 10rpx;
-  width: 100rpx;
-  height: 50rpx;
+  padding:2px 9px;
   text-align: center;
   border-radius: 20rpx;
   color: white;
   font-size: 30rpx;
+  background-color: #2BA245;
 }
 .operate {
   width: 40rpx;

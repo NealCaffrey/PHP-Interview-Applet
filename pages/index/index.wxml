@@ -26,7 +26,7 @@
           <text class="type-title">{{item.category_name}}</text>
         </view>
         <view class="list-right">
-          <text class="list-number">{{item.know_num}}</text>
+          <text class="list-number">{{item.knowledge_count}}</text>
           <image src="/images/open.png" class="operate"></image>
         </view>
       </view>
