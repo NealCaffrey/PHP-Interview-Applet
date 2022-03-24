@@ -5,14 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    id:0,
+    info:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    var that = this;
+    that.setData({
+      id:options.id
+    })
+    wx.request({
+      url: 'https://liuchuanqi.com/api/index/knowledgeInfo/'+options.id,
+      header:{
+        'content-type':'application/json'
+      },
+      success: res => {
+        if (res.data.status) {
+          that.setData({
+            info:res.data.data,
+          })
+        }
+      }
+    })
   },
 
   /**

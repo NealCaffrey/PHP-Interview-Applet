@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   padding: 40rpx;
-  background-color: #F6F6F6;
 }
 .top {
   width: 100%;
@@ -17,17 +16,17 @@
   margin-right: 10rpx;
 }
 .points-title {
-  color: #e07034;
+  color: black;
   vertical-align: top;
 }
 .exam-title {
-  color: #8a8a8a;
+  color: black;
 }
 .exam-number {
-  color: #e07034;
+  color: black;
 }
 .collection {
-  color: #e07034;
+  color: black;
 }
 .search {
   display: flex;
@@ -79,17 +78,18 @@
 }
 .list-number {
   margin-right: 10rpx;
-  width: 100rpx;
-  height: 50rpx;
+  padding:2px 9px;
   text-align: center;
   border-radius: 20rpx;
   color: white;
   font-size: 30rpx;
+  background-color: #2BA245;
 }
 .operate {
   width: 40rpx;
   height: 40rpx;
   margin-right: 20rpx;
+  margin-top:5rpx;
   vertical-align: bottom;
 }
 .list-knowledge {

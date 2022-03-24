@@ -1,1 +1,34 @@
 /* pages/question/index.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  width: 100%;
+  height: 100%;
+}
+.question {
+  width: 100%;
+  text-align: left;
+}
+.content {
+  margin-top:40rpx;
+  margin-bottom:40rpx;
+}
+.bottom {
+  width: 100%;
+  height: 80rpx;
+  position: fixed;
+  bottom:0;
+  padding:40rpx;
+}
+.bottom-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 40rpx;
+  margin-right:40rpx;
+}
+.image {
+  width: 80rpx;
+  height:80rpx;
+}

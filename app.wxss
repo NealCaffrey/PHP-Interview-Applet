@@ -7,8 +7,8 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-  background-color: #f6f6f6;
+  background-color: #EBE8E7;
 } 
 page {
-  background-color: #f6f6f6;
+  background-color: #EBE8E7;
 }

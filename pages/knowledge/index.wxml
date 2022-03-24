@@ -1,27 +1,32 @@
 <!--pages/question/index.wxml-->
 <view class="container">
-  <text>面向对象右那些特征</text>
-  <view>
-    <text></text>
 
-    <view class="top">
-      <text>基础</text>
-      <text>写笔记</text>
-    </view>
+  <view class="question">
+    <text class="question-content">{{info.question}}</text>
+  </view>
+  
+  <view class="content">
+      <text>{{info.answer}}</text>
+  </view>
 
-    <view class="line"></view>
-    <view class="content">
-        fdsfdsfd
-    </view>
-    <view class="line"></view>
-
-    <view class="comment">
-      <text>我要反馈</text>
-      <text>视频讲解</text>
-    </view>
-
-    <view class="share">
-
+  <view class="bottom">
+    <view class="bottom-box">
+      <view>
+        <image src="/images/feedback.png" class="image"></image>
+      </view>
+      <view>
+        <navigator url="/pages/knowledge/index?id={{info.prev}}" wx:if="{{info.prev}}">
+          <image src="/images/left_1.png" class="image"></image>
+        </navigator>
+      </view>
+      <view>
+        <navigator url="/pages/knowledge/index?id={{info.next}}" wx:if="{{info.next}}">
+          <image src="/images/right_1.png" class="image"></image>
+        </navigator>
+      </view>
+      <view>
+        <image src="/images/share.png" class="image"></image>
+      </view>
     </view>
   </view>
 </view>
