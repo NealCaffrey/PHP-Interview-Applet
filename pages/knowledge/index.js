@@ -1,4 +1,5 @@
 // pages/question/index.js
+const app = getApp();
 Page({
 
   /**
@@ -6,6 +7,7 @@ Page({
    */
   data: {
     id:0,
+    content:'',
     info:[]
   },
 
@@ -16,7 +18,7 @@ Page({
     var that = this;
     that.setData({
       id:options.id
-    })
+    });
     wx.request({
       url: 'https://liuchuanqi.com/api/index/knowledgeInfo/'+options.id,
       header:{
@@ -24,8 +26,10 @@ Page({
       },
       success: res => {
         if (res.data.status) {
+          let result = app.towxml(res.data.data.answer, 'markdown');
           that.setData({
             info:res.data.data,
+            content:result
           })
         }
       }
@@ -79,5 +83,26 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  //切换
+  switchKnow(event) {
+    let id = event.currentTarget.dataset.id;
+    var that = this;
+    wx.request({
+      url: 'https://liuchuanqi.com/api/index/knowledgeInfo/'+id,
+      header:{
+        'content-type':'application/json'
+      },
+      success: res => {
+        if (res.data.status) {
+          let result = app.towxml(res.data.data.answer, 'markdown');
+          that.setData({
+            info:res.data.data,
+            content:result
+          })
+        }
+      }
+    })
   }
 })

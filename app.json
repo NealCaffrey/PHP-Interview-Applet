@@ -5,7 +5,9 @@
     "pages/exam/index",
     "pages/user/index",
     "pages/collection/index",
-    "pages/knowledge/index"
+    "pages/knowledge/index",
+    "pages/search/index",
+    "pages/login/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

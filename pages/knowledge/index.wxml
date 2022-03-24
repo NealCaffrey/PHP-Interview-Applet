@@ -6,26 +6,18 @@
   </view>
   
   <view class="content">
-      <text>{{info.answer}}</text>
+      <towxml nodes="{{content}}"></towxml>
   </view>
 
   <view class="bottom">
-    <view class="bottom-box">
-      <view>
-        <image src="/images/feedback.png" class="image"></image>
+    <view class="bottom-item">
+      <view wx:if="{{info.prev}}" bindtap="switchKnow" data-id="{{info.prev}}" class="bottom-item-box">
+        <image src="/images/shang.png" class="image"></image>
       </view>
-      <view>
-        <navigator url="/pages/knowledge/index?id={{info.prev}}" wx:if="{{info.prev}}">
-          <image src="/images/left_1.png" class="image"></image>
-        </navigator>
-      </view>
-      <view>
-        <navigator url="/pages/knowledge/index?id={{info.next}}" wx:if="{{info.next}}">
-          <image src="/images/right_1.png" class="image"></image>
-        </navigator>
-      </view>
-      <view>
-        <image src="/images/share.png" class="image"></image>
+    </view>
+    <view class="bottom-item">
+      <view wx:if="{{info.next}}" bindtap="switchKnow" data-id="{{info.next}}" class="bottom-item-box">
+        <image src="/images/xia.png" class="image"></image>
       </view>
     </view>
   </view>

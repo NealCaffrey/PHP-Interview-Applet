@@ -15,5 +15,7 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
+  //引入towxml
+  towxml:require('/towxml/index')
 })

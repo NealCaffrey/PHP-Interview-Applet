@@ -38,10 +38,15 @@
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "disableUseStrict": false,
+    "useStaticServer": true,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.17.3",
+  "libVersion": "2.23.2",
   "appid": "wx9a12b3e8c9b4058a",
   "projectname": "PHP%E9%9D%A2%E8%AF%95%E5%BA%93",
   "simulatorType": "wechat",
