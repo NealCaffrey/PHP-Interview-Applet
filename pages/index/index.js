@@ -41,7 +41,7 @@ Page({
       list:data
     })
     wx.request({
-      url: 'https://liuchuanqi.com/api/interview/knowledge?category_id='+categoryId,
+      url: 'https://liuchuanqi.com/api/interview/knowledge/'+categoryId,
       header:{
         'content-type':'application/json'
       },

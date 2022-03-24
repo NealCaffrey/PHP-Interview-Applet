@@ -9,7 +9,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "PHP面试库",
     "navigationBarTextStyle": "black"
   },
