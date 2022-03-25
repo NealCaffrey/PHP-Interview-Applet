@@ -15,25 +15,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    var that = this;
-    that.setData({
-      id:options.id
-    });
-    wx.request({
-      url: 'https://liuchuanqi.com/api/index/knowledgeInfo/'+options.id,
-      header:{
-        'content-type':'application/json'
-      },
-      success: res => {
-        if (res.data.status) {
-          let result = app.towxml(res.data.data.answer, 'markdown');
-          that.setData({
-            info:res.data.data,
-            content:result
-          })
+    //验证是否已经登录
+    var app = getApp();
+    if (app.checkLogin()) {
+      //获取信息
+      var that = this;
+      that.setData({
+        id:options.id
+      });
+      wx.request({
+        url: app.globalData.apiUrl + '/api/user/knowledgeInfo/'+options.id,
+        header:{
+          'content-type':'application/json',
+          'Authorization':app.globalData.access_token
+        },
+        success: res => {
+          if (res.data.status) {
+            let result = app.towxml(res.data.data.answer, 'markdown');
+            that.setData({
+              info:res.data.data,
+              content:result
+            })
+          }
         }
-      }
-    })
+      });
+    }
   },
 
   /**
@@ -90,7 +96,7 @@ Page({
     let id = event.currentTarget.dataset.id;
     var that = this;
     wx.request({
-      url: 'https://liuchuanqi.com/api/index/knowledgeInfo/'+id,
+      url: app.globalData.apiUrl + '/api/index/knowledgeInfo/'+id,
       header:{
         'content-type':'application/json'
       },

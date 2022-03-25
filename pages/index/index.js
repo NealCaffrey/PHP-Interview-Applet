@@ -10,8 +10,9 @@ Page({
   },
   // 事件处理函数
   onLoad() {
+    //分类列表
     wx.request({
-      url: 'https://liuchuanqi.com/api/index/category',
+      url: app.globalData.apiUrl + '/api/index/category',
       header:{
         'content-type':'application/json'
       },
@@ -23,7 +24,45 @@ Page({
           })
         }
       }
-    })
+    });
+
+    //如果没有登录
+    if (!app.globalData.userInfo && false) {
+      //但是用户已经授权
+      wx.getSetting({
+        success: function (res) {
+          //不用弹窗，用拿到的code请求后台接口，获取用户信息
+          if (res.authSetting['scope.userInfo']) {
+            //登录
+            wx.login({
+              success: function(res) {
+                console.log(res);
+                if (res.code) {
+                  wx.request({
+                    url:'https://liuchuanqi.com/api/auth/login',
+                    method: 'post',
+                    data: {
+                      code: res.code
+                    },
+                    header: {
+                      'content-type':'application/json'
+                    },
+                    success: function (res) {
+                      //登录成功
+                      var result = res.data;
+                      if (result.status && result.data.access_token) {
+                        app.globalData.access_token = result.data.token_type + result.data.access_token
+                        app.globalData.userInfo = result.data.user_info
+                      }
+                    }
+                  });
+                }
+              }
+            });
+          }
+        }
+      });
+    }
   },
   //点击分类
   showItem:function (event) {
@@ -41,8 +80,9 @@ Page({
     this.setData({
       list:data
     });
+    //获取分类数据
     wx.request({
-      url: 'https://liuchuanqi.com/api/index/knowledge/'+categoryId,
+      url: app.globalData.apiUrl + '/api/index/knowledge/'+categoryId,
       header:{
         'content-type':'application/json'
       },

@@ -1,4 +1,6 @@
 // pages/login/index.js
+const app = getApp();
+
 Page({
 
   /**
@@ -12,27 +14,54 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          //已经授权
-        } else {
-          //没有授权
-        }
-      }
-    })
   },
 
   bindGetUserInfo: function(res) {
+    //允许授权
     if (res.detail.userInfo) {
-      //允许授权
-      var that = this;
-      that.setData({
-        isHide:false
+      //获取用户信息
+      wx.getUserInfo({
+        success: function(res) {
+          //登录
+          var encryptedData = res.encryptedData;
+          var iv = res.iv;
+          wx.login({
+            success: function(res) {
+              //如果有code
+              if (res.code) {
+                //请求接口
+                wx.request({
+                  url:'https://liuchuanqi.com/api/auth/login',
+                  method: 'post',
+                  data: {
+                    code: res.code,
+                    iv:iv,
+                    encryptedData: encryptedData
+                  },
+                  header: {
+                    'content-type':'application/json'
+                  },
+                  success: function (res) {
+                    //登录成功
+                    var result = res.data;
+                    if (result.status && result.data.access_token) {
+                      app.globalData.access_token = result.data.token_type + result.data.access_token
+                      app.globalData.userInfo = result.data.user_info
+                    }
+                    //跳转到首页
+                    wx.redirectTo({
+                      url: '/pages/index/index',
+                    });
+                  }
+                });
+              }
+            }
+          });
+        }
       })
     } else {
       //拒绝授权
+      console.log('拒绝授权');
       wx.showModal({
         title:'警告',
         content:'您点击了拒绝授权，将无法使用刷题和个人中心功能',
@@ -41,8 +70,10 @@ Page({
         success:function(res) {
           if(res.confirm) {
             //返回授权
+            console.log('拒绝授权-返回授权');
           } else {
             //拒绝授权
+            console.log('拒绝授权-拒绝授权');
           }
         }
       })

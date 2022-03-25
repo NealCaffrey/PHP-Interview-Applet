@@ -1,21 +1,24 @@
 // app.js
 App({
   onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    access_token: null,
+    apiUrl: 'https://liuchuanqi.com'
   },
   //引入towxml
-  towxml:require('/towxml/index')
+  towxml:require('/towxml/index'),
+  //登录
+  checkLogin: function () {
+    console.log(this.globalData.userInfo);
+    if (!this.globalData.userInfo) {
+      wx.redirectTo({
+        url:"/pages/login/index"
+      });
+      return false;
+    } else {
+      return true;
+    }
+  }
 })
