@@ -31,7 +31,7 @@ Page({
         },
         success: res => {
           if (res.data.status) {
-            let result = app.towxml(res.data.data.answer, 'markdown');
+            let result = res.data.data.answer;
             that.setData({
               info:res.data.data,
               content:result
@@ -102,7 +102,7 @@ Page({
       },
       success: res => {
         if (res.data.status) {
-          let result = app.towxml(res.data.data.answer, 'markdown');
+          let result = res.data.data.answer;
           that.setData({
             info:res.data.data,
             content:result

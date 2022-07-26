@@ -1,0 +1,9 @@
+<view class="list">
+    <view class="item" wx:for="{{list}}" wx:key="key" wx:for-item="item">
+      <navigator url="/pages/list/index?id={{item.id}}" hover-class="navigator-hover">
+        <view class="info">
+          <text class="title">{{item.question}}</text>
+        </view>
+      </navigator>
+    </view>
+  </view>

@@ -2,37 +2,13 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding: 40rpx;
-}
-.top {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.points-img {
-  width: 50rpx;
-  height: 50rpx;
-  margin-right: 10rpx;
-}
-.points-title {
-  color: black;
-  vertical-align: top;
-}
-.exam-title {
-  color: black;
-}
-.exam-number {
-  color: black;
-}
-.collection {
-  color: black;
+  padding: 5%;
 }
 .search {
   display: flex;
   width: 100%;
   margin-top: 40rpx;
-  margin-bottom: 40rpx;
+  margin-bottom: 10rpx;
 }
 .keyword {
   width: 100%;
@@ -47,74 +23,35 @@
   color: #8a8a8a;
 }
 .type-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   width: 100%;
-  margin-top:20rpx;
-  border: 1px solid #ffffff;
+  overflow: hidden;
+  margin-bottom: 5%;
+}
+.type-item {
+  float: left;
+  position: relative;
+  width: 42.5%;
+  margin-left: 5%;
+  margin-top: 5%;
   background-color: white;
 }
-.list-info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  padding: 30rpx 0rpx;
-}
-.list-left {
-  display: flex;
-}
-.list-right {
-  display: flex;
-}
-.type-icon {
-  width: 50rpx;
-  height: 50rpx;
-  margin-left: 20rpx;
-}
-.type-title {
-  margin-left: 20rpx;
-}
-.list-number {
-  margin-right: 10rpx;
-  padding:2px 9px;
+.image-box {
   text-align: center;
-  border-radius: 20rpx;
-  color: white;
-  font-size: 30rpx;
-  background-color: #2BA245;
-}
-.operate {
-  width: 40rpx;
-  height: 40rpx;
-  margin-right: 20rpx;
-  margin-top:5rpx;
-  vertical-align: bottom;
-}
-.list-knowledge {
   display: flex;
+  justify-content: center;
+}
+.item-image {
+  width: 200rpx;
+  height: 200rpx;
+}
+.title-box {
   width: 100%;
-  height: 150rpx;
+  text-align: center;
+  display: flex;
+  margin-top:20rpx;
+  margin-bottom:20rpx;
 }
-.knowledge-info {
+.item-title {
   width: 100%;
-  border-top: 1px solid #d0d0d0;
-  font-size: 30rpx;
-  letter-spacing: 2rpx;
-}
-.knowledge-info-box {
-  padding: 30rpx 0rpx;
-}
-.knowledge-number {
-  margin-left: 10rpx;
-}
-.knowledge-image {
-  width: 40rpx;
-  height: 40rpx;
-  float: right;
-  margin-right: 10rpx;
-}
-.hide {
-  display: none;
+  color: black;
 }

@@ -1,0 +1,12 @@
+/* pages/list/index.wxss */
+.list {
+  width: 90%;
+  margin:5%;
+}
+.item {
+  width: 100%;
+  margin-top: 40rpx;
+  background-color: white;
+  overflow: hidden;
+  padding: 20rpx;
+}
