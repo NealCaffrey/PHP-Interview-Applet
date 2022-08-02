@@ -6,7 +6,7 @@
     "pages/user/index",
     "pages/collection/index",
     "pages/list/index",
-    "pages/knowledge/index",
+    "pages/info/index",
     "pages/search/index",
     "pages/login/index"
   ],
@@ -25,20 +25,20 @@
       {
       "pagePath": "pages/index/index",
       "text":"题库",
-      "iconPath": "images/know.png",
-      "selectedIconPath": "images/know_selected.png"
+      "iconPath": "images/icon/know.png",
+      "selectedIconPath": "images/icon/know_selected.png"
     },
     {
       "pagePath": "pages/exam/index",
       "text":"刷题",
-      "iconPath": "images/exam.png",
-      "selectedIconPath": "images/exam_selected.png"
+      "iconPath": "images/icon/exam.png",
+      "selectedIconPath": "images/icon/exam_selected.png"
     },
     {
       "pagePath": "pages/user/index",
       "text":"我的",
-      "iconPath": "images/me.png",
-      "selectedIconPath": "images/me_selected.png"
+      "iconPath": "images/icon/me.png",
+      "selectedIconPath": "images/icon/me_selected.png"
     }]
   },
   "style": "v2",

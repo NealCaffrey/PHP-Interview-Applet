@@ -5,26 +5,21 @@ const app = getApp()
 Page({
   data: {
     total:0,
-    list:[]
+    list:[
+      {"id":1,"name":"PHP基础","images":"/images/category/php.png"},
+      {"id":2,"name":"PHP高级","images":"/images/category/php.png"},
+      {"id":3,"name":"Mysql","images":"/images/category/mysql.png"},
+      {"id":4,"name":"Linux","images":"/images/category/linux.png"},
+      {"id":5,"name":"Nginx","images":"/images/category/nginx.png"},
+      {"id":6,"name":"Redis","images":"/images/category/redis.png"},
+      {"id":7,"name":"MongoDb","images":"/images/category/mongodb.png"},
+      {"id":8,"name":"Kafka","images":"/images/category/kafka.png"},
+      {"id":9,"name":"Docker","images":"/images/category/docker.png"},
+      {"id":10,"name":"Vue","images":"/images/category/vue.png"},
+    ]
   },
   // 事件处理函数
   onLoad() {
-    //分类列表
-    wx.request({
-      url: app.globalData.apiUrl + '/api/index/category',
-      header:{
-        'content-type':'application/json'
-      },
-      success: res => {
-        if (res.data.status) {
-          this.setData({
-            total:res.data.total,
-            list:res.data.list
-          })
-        }
-      }
-    });
-
     //如果没有登录
     if (!app.globalData.userInfo && false) {
       //但是用户已经授权

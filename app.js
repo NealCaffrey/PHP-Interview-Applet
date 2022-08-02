@@ -5,7 +5,7 @@ App({
   globalData: {
     userInfo: null,
     access_token: null,
-    apiUrl: 'https://liuchuanqi.com'
+    apiUrl: 'https://phpmianshiwang.com'
   },
   //登录
   checkLogin: function () {

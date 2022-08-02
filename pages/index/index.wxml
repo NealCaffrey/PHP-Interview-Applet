@@ -12,7 +12,7 @@
           <image src="{{item.images}}" class="item-image"></image>
         </view>
         <view class="title-box">
-          <text class="item-title">{{item.category_name}}</text>
+          <text class="item-title">{{item.name}}</text>
         </view>
       </navigator>
     </view>
